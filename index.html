@@ -1,1 +1,103 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afstand</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 850px;
+  margin: 100px auto;
+  padding: 25px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  letter-spacing: -2px;
+}
+
+p {
+  color: #888;
+}
+
+.browser {
+  margin-top: 40px;
+  padding: 12px;
+  background: #181818;
+  border: 1px solid #303030;
+  border-radius: 12px;
+}
+
+.address {
+  width: 100%;
+  padding: 16px;
+  background: #090909;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 13px 25px;
+  background: white;
+  color: black;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preview {
+  margin-top: 15px;
+  min-height: 250px;
+  background: #101010;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+  <h1>Afstand</h1>
+  <p>Chop Rice, Chop Rice.</p>
+
+  <div class="browser">
+    <input
+      class="address"
+      type="text"
+      placeholder="Voer een toegestane testwebsite in..."
+      disabled
+    >
+
+    <button disabled>Open website</button>
+
+    <div class="preview">
+      Nog niet gekoppeld.
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
+
