@@ -42,6 +42,18 @@ p {
   border-radius: 12px;
 }
 
+.browser:fullscreen {
+  background: #080808;
+  border: none;
+  border-radius: 0;
+  padding: 30px;
+  overflow: auto;
+}
+
+.browser:fullscreen .preview {
+  min-height: calc(100vh - 180px);
+}
+
 .address {
   width: 100%;
   padding: 16px;
@@ -60,6 +72,11 @@ button {
   border: 0;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #ccc;
 }
 
 button:disabled {
@@ -92,7 +109,12 @@ button:disabled {
   <h1>Afstand</h1>
   <p>Chop Rice, Chop Rice.</p>
 
-  <div class="browser">
+  <div class="browser" id="browser">
+
+    <button onclick="toggleFullscreen()">
+      ⛶ Fullscreen
+    </button>
+
     <input
       class="address"
       type="text"
@@ -105,6 +127,7 @@ button:disabled {
     <div class="preview">
       Testomgeving nog niet gekoppeld.
     </div>
+
   </div>
 
   <p id="backend-status">Backend controleren...</p>
@@ -131,6 +154,20 @@ async function checkBackend() {
   } catch (error) {
     status.textContent =
       "Afstand backend: niet bereikbaar";
+  }
+}
+
+async function toggleFullscreen() {
+  const browser = document.getElementById("browser");
+
+  try {
+    if (!document.fullscreenElement) {
+      await browser.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch (error) {
+    console.error("Fullscreen kon niet worden gestart:", error);
   }
 }
 
